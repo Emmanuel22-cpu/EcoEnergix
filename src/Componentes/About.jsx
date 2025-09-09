@@ -18,15 +18,15 @@ export default function About() {
 
         {/* Texto */}
         <div className="backdrop-blur-lg bg-white/30 border border-white/20 rounded-2xl p-8 shadow-lg">
-          <h3 className="text-3xl font-bold text-gray-900 mb-4">Nosotros</h3>
-          <p className="text-gray-700 mb-4">
+          <h3 className="text-3xl font-bold text-white mb-4">Conocenos</h3>
+          <p className="text-white mb-4">
             En EcoEnergix trabajamos para crear soluciones energéticas
             sostenibles que impulsen comunidades y empresas. Combinamos
             tecnología, investigación y prácticas responsables con el medio
             ambiente para ofrecer proyectos de energía renovable eficientes y
             asequibles.
           </p>
-          <ul className="list-disc pl-5 text-gray-700 space-y-2">
+          <ul className="list-disc pl-5 text-white space-y-2">
             <li>Instalación de paneles solares</li>
             <li>Optimización de consumo energético</li>
             <li>Consultoría y mantenimiento</li>

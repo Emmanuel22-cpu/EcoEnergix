@@ -3,11 +3,11 @@ function ServiceCard({ title, desc, icon }) {
     <div className="backdrop-blur-md bg-white/25 border border-white/20 rounded-2xl p-6 shadow-md">
       <div className="flex items-start gap-4">
         <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-white/30">
-          {/* icon puede ser un emoji o svg */}
+          
           <span className="text-2xl">{icon}</span>
         </div>
         <div>
-          <h4 className="text-lg font-semibold text-gray-900">{title}</h4>
+          <h4 className="text-lg font-semibold text-white">{title}</h4>
           <p className="text-sm text-gray-700 mt-1">{desc}</p>
         </div>
       </div>
@@ -56,8 +56,8 @@ export default function Services() {
       className="w-full max-w-6xl mx-auto px-6 py-16"
     >
       <div className="mb-8 text-center">
-        <h3 className="text-3xl font-bold text-gray-900">Servicios</h3>
-        <p className="text-gray-700 mt-2">
+        <h3 className="text-3xl font-bold text-white">Servicios</h3>
+        <p className="text-white mt-2">
           Soluciones integrales para cada necesidad energética.
         </p>
       </div>
