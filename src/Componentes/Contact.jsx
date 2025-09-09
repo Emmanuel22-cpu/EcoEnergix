@@ -35,18 +35,18 @@ export default function Contact() {
     <section
       id="contacto"
       style={{ scrollMarginTop: "80px" }}
-      className="w-full max-w-4xl mx-auto px-6 py-16"
+      className="w-full max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-16"
     >
       <div className="mb-6 text-center">
-        <h3 className="text-3xl font-bold text-gray-900">Contacto</h3>
-        <p className="text-gray-700 mt-2">
+        <h3 className="text-2xl sm:text-3xl font-bold text-gray-900">Contacto</h3>
+        <p className="text-gray-700 mt-2 text-base sm:text-lg">
           ¿Tienes alguna duda? Escríbenos y te responderemos lo más pronto posible.
         </p>
       </div>
 
       <form
         onSubmit={handleSubmit}
-        className="backdrop-blur-lg bg-white/30 border border-white/20 rounded-2xl p-6 shadow-md"
+        className="backdrop-blur-lg bg-white/30 border border-white/20 rounded-2xl p-4 sm:p-6 shadow-md"
         noValidate
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -57,7 +57,7 @@ export default function Contact() {
               value={form.name}
               onChange={handleChange}
               required
-              className="px-3 py-2 rounded-lg border border-gray-200 focus:outline-none"
+              className="px-3 py-2 rounded-lg border border-gray-200 focus:outline-none w-full"
               placeholder="Tu nombre"
             />
           </label>
@@ -70,7 +70,7 @@ export default function Contact() {
               onChange={handleChange}
               required
               type="email"
-              className="px-3 py-2 rounded-lg border border-gray-200 focus:outline-none"
+              className="px-3 py-2 rounded-lg border border-gray-200 focus:outline-none w-full"
               placeholder="tu@correo.com"
             />
           </label>
@@ -83,17 +83,17 @@ export default function Contact() {
               onChange={handleChange}
               rows="5"
               required
-              className="px-3 py-2 rounded-lg border border-gray-200 focus:outline-none"
+              className="px-3 py-2 rounded-lg border border-gray-200 focus:outline-none w-full resize-none"
               placeholder="Cuéntanos sobre tu proyecto..."
             />
           </label>
         </div>
 
-        <div className="mt-4 flex items-center gap-4">
+        <div className="mt-4 flex flex-col sm:flex-row items-center gap-4">
           <button
             type="submit"
             disabled={status.sending}
-            className="px-5 py-2 bg-[#0072ff] text-white rounded-lg shadow-sm hover:bg-[#005ed6] disabled:opacity-60"
+            className="px-5 py-2 w-full sm:w-auto bg-[#0072ff] text-white rounded-lg shadow-sm hover:bg-[#005ed6] disabled:opacity-60"
           >
             {status.sending ? "Enviando..." : "Enviar mensaje"}
           </button>

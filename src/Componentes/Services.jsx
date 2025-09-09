@@ -1,72 +1,27 @@
-function ServiceCard({ title, desc, icon }) {
-  return (
-    <div className="backdrop-blur-md bg-white/25 border border-white/20 rounded-2xl p-6 shadow-md">
-      <div className="flex items-start gap-4">
-        <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-white/30">
-          
-          <span className="text-2xl">{icon}</span>
-        </div>
-        <div>
-          <h4 className="text-lg font-semibold text-white">{title}</h4>
-          <p className="text-sm text-gray-700 mt-1">{desc}</p>
-        </div>
-      </div>
-    </div>
-  )
-}
-
 export default function Services() {
-  const services = [
-    {
-      title: "Energía solar",
-      desc: "Diseño e instalación de sistemas fotovoltaicos para hogares y empresas.",
-      icon: "☀️",
-    },
-    {
-      title: "Auditoría energética",
-      desc: "Análisis de consumo y recomendaciones para reducir costos y huella.",
-      icon: "🔎",
-    },
-    {
-      title: "Mantenimiento",
-      desc: "Planes de mantenimiento preventivo y correctivo para instalaciones.",
-      icon: "🛠️",
-    },
-    {
-      title: "Baterías y almacenamiento",
-      desc: "Soluciones de almacenamiento para independencia energética.",
-      icon: "🔋",
-    },
-    {
-      title: "Micro redes",
-      desc: "Sistemas aislados y redes locales inteligentes.",
-      icon: "🌐",
-    },
-    {
-      title: "Consultoría",
-      desc: "Proyectos llave en mano y estudios de viabilidad.",
-      icon: "📈",
-    },
-  ]
-
   return (
-    <section
-      id="servicios"
-      style={{ scrollMarginTop: "80px" }}
-      className="w-full max-w-6xl mx-auto px-6 py-16"
-    >
-      <div className="mb-8 text-center">
-        <h3 className="text-3xl font-bold text-white">Servicios</h3>
-        <p className="text-white mt-2">
-          Soluciones integrales para cada necesidad energética.
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {services.map((s, i) => (
-          <ServiceCard key={i} {...s} />
-        ))}
+    <section className="w-full py-16 px-6 sm:px-12 lg:px-20 text-center">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-10">
+        Nuestros Servicios
+      </h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="p-6 bg-white/10 backdrop-blur-md rounded-xl shadow-md hover:scale-115 transition">
+          <h3 className="text-xl font-semibold text-[#3dc692] mb-2">Paneles Solares</h3>
+          <p className="text-gray-200 text-sm sm:text-base">Instalación de sistemas solares personalizados.</p>
+        </div>
+        <div className="p-6 bg-white/10 backdrop-blur-md rounded-xl shadow-md hover:scale-115 transition">
+          <h3 className="text-xl font-semibold text-[#3dc692] mb-2">Ahorro Energético</h3>
+          <p className="text-gray-200 text-sm sm:text-base">Soluciones para reducir costos de energía.</p>
+        </div>
+        <div className="p-6 bg-white/10 backdrop-blur-md rounded-xl shadow-md hover:scale-115 transition">
+          <h3 className="text-xl font-semibold text-[#3dc692] mb-2">Mantenimiento</h3>
+          <p className="text-gray-200 text-sm sm:text-base">Revisión y soporte técnico especializado.</p>
+        </div>
+         <div className="p-6 bg-white/10 backdrop-blur-md rounded-xl shadow-md hover:scale-115 transition lg:col-span-3 lg:w-1/3 lg:mx-auto ">
+          <h3 className="text-xl font-semibold text-[#3dc692] mb-2">Asesoria</h3>
+          <p className="text-gray-200 text-sm sm:text-base">Brindamos todo tipo de información sobre energia renovable.</p>
+        </div>
       </div>
     </section>
-  )
+  );
 }
