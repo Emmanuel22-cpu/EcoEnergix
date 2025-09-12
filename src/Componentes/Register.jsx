@@ -6,7 +6,7 @@ export default function Register() {
     name: "",
     email: "",
     password: "",
-    terms: false, // nuevo campo
+    terms: false,
   })
 
   const handleChange = (e) => {
@@ -80,12 +80,29 @@ export default function Register() {
               className="mt-1 w-4 h-4 text-[#7d5fff] border-gray-300 rounded focus:ring-[#7d5fff]"
             />
             <label className="text-sm text-white">
-              Acepto los{" "}
+              Estoy de acuerdo con los{" "}
               <Link to="/terms" className="text-[#00c9a7] hover:underline">
                 Términos y Condiciones
               </Link>
             </label>
           </div>
+
+          <div className="flex items-start gap-2">
+            <input
+              type="checkbox"
+              name="terms"
+              checked={formData.hero}
+              onChange={handleChange}
+              className="mt-1 w-4 h-4 text-[#7d5fff] border-gray-300 rounded focus:ring-[#7d5fff]"
+            />
+            <label className="text-sm text-white">
+              Acepto la{" "}
+              <Link to="/" className="text-[#00c9a7] hover:underline">
+                Politica y Privacidad
+              </Link>
+            </label>
+          </div>
+
 
           <button
             type="submit"

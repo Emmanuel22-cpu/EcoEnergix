@@ -1,109 +1,58 @@
-import { useState } from "react"
-
-export default function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", msg: "" })
-  const [status, setStatus] = useState({ sending: false, done: false, error: "" })
-
-  function handleChange(e) {
-    setForm((p) => ({ ...p, [e.target.name]: e.target.value }))
-  }
-
-  function validate() {
-    if (!form.name.trim()) return "Escribe tu nombre"
-    if (!/^\S+@\S+\.\S+$/.test(form.email)) return "Email inválido"
-    if (form.msg.trim().length < 10) return "Mensaje muy corto"
-    return null
-  }
-
-  function handleSubmit(e) {
-    e.preventDefault()
-    const err = validate()
-    if (err) {
-      setStatus({ sending: false, done: false, error: err })
-      return
-    }
-    setStatus({ sending: true, done: false, error: "" })
-
-   
-    setTimeout(() => {
-      setStatus({ sending: false, done: true, error: "" })
-      setForm({ name: "", email: "", msg: "" })
-    }, 1200)
-  }
-
+export default function Contacto() {
   return (
-    <section
-      id="contacto"
-      style={{ scrollMarginTop: "80px" }}
-      className="w-full max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-16"
-    >
-      <div className="mb-6 text-center">
-        <h3 className="text-2xl sm:text-3xl font-bold text-gray-900">Contacto</h3>
-        <p className="text-gray-700 mt-2 text-base sm:text-lg">
-          ¿Tienes alguna duda? Escríbenos y te responderemos lo más pronto posible.
+    <section id="contacto" className="bg-gray-900 text-white py-20 px-6">
+      <div className="max-w-6xl mx-auto text-center">
+        <h2 className="text-4xl md:text-5xl font-bold text-green-400 mb-6">
+          Contáctanos
+        </h2>
+        <p className="text-lg text-gray-300 mb-12 max-w-2xl mx-auto">
+          ¿Quieres más información sobre nuestros servicios de energía solar?  
+          Escríbenos y el equipo de <span className="text-green-400">EcoEnergix</span> se pondrá en contacto contigo.
         </p>
       </div>
 
-      <form
-        onSubmit={handleSubmit}
-        className="backdrop-blur-lg bg-white/30 border border-white/20 rounded-2xl p-4 sm:p-6 shadow-md"
-        noValidate
-      >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <label className="flex flex-col">
-            <span className="text-sm text-gray-700 mb-1">Nombre</span>
-            <input
-              name="name"
-              value={form.name}
-              onChange={handleChange}
-              required
-              className="px-3 py-2 rounded-lg border border-gray-200 focus:outline-none w-full"
-              placeholder="Tu nombre"
-            />
-          </label>
-
-          <label className="flex flex-col">
-            <span className="text-sm text-gray-700 mb-1">Correo</span>
-            <input
-              name="email"
-              value={form.email}
-              onChange={handleChange}
-              required
-              type="email"
-              className="px-3 py-2 rounded-lg border border-gray-200 focus:outline-none w-full"
-              placeholder="tu@correo.com"
-            />
-          </label>
-
-          <label className="md:col-span-2 flex flex-col">
-            <span className="text-sm text-gray-700 mb-1">Mensaje</span>
-            <textarea
-              name="msg"
-              value={form.msg}
-              onChange={handleChange}
-              rows="5"
-              required
-              className="px-3 py-2 rounded-lg border border-gray-200 focus:outline-none w-full resize-none"
-              placeholder="Cuéntanos sobre tu proyecto..."
-            />
-          </label>
-        </div>
-
-        <div className="mt-4 flex flex-col sm:flex-row items-center gap-4">
+      <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10">
+        {/* Formulario */}
+        <form className="bg-gray-800 p-8 rounded-2xl shadow-lg space-y-6">
+          <input
+            type="text"
+            placeholder="Tu nombre"
+            className="w-full border border-gray-600 bg-gray-900 text-white rounded-lg p-3 focus:ring-2 focus:ring-green-500 outline-none"
+          />
+          <input
+            type="email"
+            placeholder="Tu correo electrónico"
+            className="w-full border border-gray-600 bg-gray-900 text-white rounded-lg p-3 focus:ring-2 focus:ring-green-500 outline-none"
+          />
+          <textarea
+            rows="4"
+            placeholder="Escribe tu mensaje..."
+            className="w-full border border-gray-600 bg-gray-900 text-white rounded-lg p-3 focus:ring-2 focus:ring-green-500 outline-none"
+          ></textarea>
           <button
             type="submit"
-            disabled={status.sending}
-            className="px-5 py-2 w-full sm:w-auto bg-[#0072ff] text-white rounded-lg shadow-sm hover:bg-[#005ed6] disabled:opacity-60"
+            className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-lg shadow-md transition"
           >
-            {status.sending ? "Enviando..." : "Enviar mensaje"}
+            Enviar mensaje
           </button>
+        </form>
 
-          {status.done && (
-            <span className="text-green-600">¡Mensaje enviado! Te contactamos pronto.</span>
-          )}
-          {status.error && <span className="text-red-600">{status.error}</span>}
+        {/* Información de contacto */}
+        <div className="flex flex-col justify-center bg-gray-800 p-8 rounded-2xl shadow-lg space-y-6">
+          <div>
+            <h3 className="text-xl font-semibold text-green-400 mb-2">📍 Dirección</h3>
+            <p className="text-gray-300">Calle Solar #123, Bogotá, Colombia</p>
+          </div>
+          <div>
+            <h3 className="text-xl font-semibold text-green-400 mb-2">📞 Teléfono</h3>
+            <p className="text-gray-300">+57 310 123 4567</p>
+          </div>
+          <div>
+            <h3 className="text-xl font-semibold text-green-400 mb-2">📧 Correo</h3>
+            <p className="text-gray-300">contacto@ecoenergix.com</p>
+          </div>
         </div>
-      </form>
+      </div>
     </section>
   )
 }

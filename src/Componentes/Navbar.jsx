@@ -10,7 +10,7 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           <img src="/src/Image/EcoEnergixSINFONDO.png" alt="Logo" className="h-10 sm:h-12 w-auto object-contain" />
           <h1 className="text-xl font-extrabold sm:text-2xl bg-gradient-to-r from-[#4375b2] via-[#5f54b3] to-[#3dc692] bg-clip-text text-transparent  drop-shadow-md  absolute left-1/2 -translate-x-1/2
-            md:static md:translate-x-0 md:ml-3">EcoEnergix</h1>
+            md:static md:translate-x-0 md:ml-3"><Link to="/">EcoEnergix</Link></h1>
         </div>
 
         <ul className="hidden md:flex gap-6 lg:gap-8 text-sm sm:text-base lg:text-lg text-white font-medium">
