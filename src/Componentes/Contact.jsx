@@ -24,7 +24,7 @@ export default function Contact() {
     }
     setStatus({ sending: true, done: false, error: "" })
 
-    // Simulación de envío (aquí integrarías API real)
+   
     setTimeout(() => {
       setStatus({ sending: false, done: true, error: "" })
       setForm({ name: "", email: "", msg: "" })

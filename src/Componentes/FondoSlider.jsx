@@ -1,28 +1,27 @@
-import { Swiper, SwiperSlide } from "swiper/react"
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
 import { Autoplay } from "swiper/modules";
 
-export default function FondoSlider () {
-    
-    return(
-        <div className="absolute top-0 left-0 w-full h-full min-h-[300px] sm:min-h-[400px] md:min-h-screen -z-10">
-        <Swiper
-            modules={[Autoplay]}
-            autoplay={{ delay: 4000, disableOnInteraction: false}}
-            loop={true}
-            className="w-full min-h-[300px] sm:min-h-[400px] md:min-h-screen"
-        >
-            <SwiperSlide>
-                <div className="w-full min-h-[300px] sm:min-h-[400px] md:min-h-screen bg-[url('/src/Image/Fondo.webp')] bg-cover bg-center"></div>
-            </SwiperSlide>
-            <SwiperSlide>
-                <div className="w-full min-h-[300px] sm:min-h-[400px] md:min-h-screen bg-[url('/src/Image/Fondo2.png')] bg-cover bg-center"></div>
-            </SwiperSlide>
-            <SwiperSlide>
-                <div className="w-full min-h-[300px] sm:min-h-[400px] md:min-h-screen bg-[url('/src/Image/Fondo3.png')] bg-cover bg-center"></div>
-            </SwiperSlide>
-        </Swiper>
-        </div>
-    )
+export default function FondoSlider() {
+  return (
+    <div className="absolute top-0 left-0 w-full h-full -z-10">
+      <Swiper
+        modules={[Autoplay]}
+        autoplay={{ delay: 4000, disableOnInteraction: false }}
+        loop={true}
+        className="h-full w-full"
+      >
+        <SwiperSlide>
+          <div className="h-full bg-[url('/src/Image/Fondo.webp')] bg-cover bg-center"></div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="h-full bg-[url('/src/Image/Fondo2.png')] bg-cover bg-center"></div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="h-full bg-[url('/src/Image/Fondo3.png')] bg-cover bg-center"></div>
+        </SwiperSlide>
+      </Swiper>
+    </div>
+  );
 }
